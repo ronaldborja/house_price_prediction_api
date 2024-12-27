@@ -10,7 +10,7 @@ from sqlalchemy.exc import SQLAlchemyError
 class PricePredictionService: 
 
     @classmethod
-    def predict(house: HouseRequestModel) ->  PricePredictionResponseModel:
+    def predict(cls, house: HouseRequestModel) ->  PricePredictionResponseModel:
         try:  
             # 1. Charge the model params to make preds: 
             model = LinearReg()
@@ -18,22 +18,22 @@ class PricePredictionService:
 
             #2. Create the object House to get the params 
             new_house = House(**house.model_dump())
-
+            
             #3. Cast to np array type
             new_house_array = np.array([
                 new_house.square_footage, 
                 new_house.num_bedrooms,
                 new_house.num_bathrooms, 
-                new_house.year_built, 
+                new_house.year_built,  
                 new_house.lot_size, 
                 new_house.garage_size, 
-                new_house.neighborhood_quality
-            ])
+                new_house.neighborhood_quality]
+            )
 
             new_house_array = new_house_array.reshape(1,-1)
 
             #3. Normalize the inputs
-            new_house_normalized = model.normalize_features(new_house_array)
+            new_house_normalized = model.prepare_features(new_house_array)
 
             #4. Make preds: 
             pred_arr = model.predict(W, new_house_normalized) 
