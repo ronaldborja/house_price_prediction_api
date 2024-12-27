@@ -8,8 +8,6 @@ class HouseRequestModel(BaseModel):
     lot_size: float 
     garage_size: int
     neighborhood_quality: int 
-    model_config: ConfigDict = {
-    }
 
 
 class HouseResponseModel(BaseModel): 

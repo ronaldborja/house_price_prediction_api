@@ -22,8 +22,30 @@ class LinearReg:
         self.fit_intercept = fit_intercept
 
     # Normalize -> Values between -1 to 1 
-    def normalize_features(self, X: np.ndarray) -> np.ndarray: 
-        return (X - np.mean(X, 0))/np.std(X,0)
+    def normalize_features(self, X) -> np.ndarray:
+        mean = np.array([
+            2813.900000,
+            2.968750,
+            1.971250,
+            1986.902500,
+            2.772345,
+            1.015000, 
+            5.596250 
+        ])
+
+
+        std_dev = np.array([
+            1251.986627, 
+            1.420484,
+            0.815735,
+            20.796526,
+            1.282339,
+            0.819924,
+            2.913458
+        ])
+
+        return (X - mean)/ std_dev
+
     
     # Adjust X vector based on the needs of the user 
     def prepare_features(self, X: np.ndarray) -> np.ndarray: 
