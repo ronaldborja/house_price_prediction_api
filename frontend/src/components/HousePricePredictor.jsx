@@ -5,10 +5,10 @@ const HousePricePredictor = () => {
 
   // 2. Almacenar el estado del componente 
   const [formData, setFormData] = useState({
+    yearBuilt: '',
     squareFootage: '',
     bedrooms: '',
     bathrooms: '',
-    yearBuilt: '',
     lotSize: '',
     garageSize: '',
     neighborhoodQuality: ''
@@ -67,7 +67,7 @@ const HousePricePredictor = () => {
     { name: 'bedrooms', label: 'Bedrooms', type: 'number' },
     { name: 'bathrooms', label: 'Bathrooms', type: 'number' },
     { name: 'yearBuilt', label: 'Year Built', type: 'number' },
-    { name: 'lotSize', label: 'Lot Size', type: 'number' },
+    { name: 'lotSize', label: 'Lot Size', type: 'text' },
     { name: 'garageSize', label: 'Garage Size', type: 'number' },
     { name: 'neighborhoodQuality', label: 'Neighborhood Quality (1-10)', type: 'number' }
   ];
@@ -75,7 +75,7 @@ const HousePricePredictor = () => {
   // Renderización de la página a mostrar en el app.jsx 
 
   return (
-    <div>      
+    <div className='form-column'>      
       <form onSubmit={handleSubmit}>
 
         {fields.map(field => (
