@@ -1,4 +1,4 @@
-# Development of a RESTful API with a vectorized implementation of Linear Regression to Predict House Prices. 
+# Development of a Fullstack App with a vectorized implementation of Linear Regression to Predict House Prices. 
 
 Stack: 
 - FastAPI (api development)
