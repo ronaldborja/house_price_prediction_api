@@ -1,4 +1,4 @@
-Development of a Fullstack App: Predicting House Prices with Linear Regression
+# Development of a Fullstack App: Predicting House Prices with Linear Regression
 
 This project demonstrates the development of a fullstack web application that implements a vectorized Linear Regression algorithm to predict house prices. The app combines robust backend development, an interactive frontend interface, and data analysis techniques to deliver predictions based on user input.
 
